@@ -1,0 +1,64 @@
+<!-- ### Core Features (build in this order)
+
+1. **Add expense** — form: amount, category (dropdown: food/travel/hostel/misc), date, note
+2. **Display list** — table or card list of all expenses, most recent first
+3. **Delete expense** — remove button per entry
+4. **Running total** — sum of all expenses, updates live
+5. **Category totals** — small breakdown: total spent per category
+6. **Persistence** — save to `localStorage` on every change, load on page refresh
+
+### Stretch (only after core works)
+- Filter by category or date range
+- Simple bar chart of category spend (plain JS/CSS bars, no chart library needed)
+- Monthly view toggle
+
+---
+
+### What You're Actually Practicing
+- DOM selection & manipulation (`querySelector`, `createElement`, `appendChild`)
+- Event listeners (form submit, delete clicks — event delegation for dynamically added items)
+- Array methods (`filter`, `reduce` for totals, `map` for rendering)
+- `JSON.stringify`/`JSON.parse` with `localStorage`
+- Basic state management without a framework — this is what React's `useState` abstracts later, so doing it raw here matters
+
+---
+
+### Order of Building
+1. Static HTML form + empty list container
+2. JS: capture form submit → push to an array → console.log it (no rendering yet)
+3. Render the array to the DOM
+4. Add delete functionality
+5. Add localStorage save/load
+6. Add running total + category breakdown
+7. Style last — function before form
+
+---
+
+### Resources
+- MDN: `localStorage`, `Array.prototype.reduce`, event delegation
+- No tutorial-following — you know enough JS basics to build this from the spec above. If you copy a tutorial's code, you learn nothing.--> 
+
+<html>
+  <header>
+  </header>
+  <body>
+    <form>
+      <label for="amount">Enter Amount in INR</label><br>
+      <input type="text" name="amount"><br><br>
+      <label for="category"> Enter the Category of Expense</label><br>
+      <input type="radio" name="category" value="food">
+      <label for="food">Food</label><br>
+      <input type="radio" name="category" value="travel">
+      <label for="food">Travel</label><br>
+      <input type="radio" name="category" value="hostel">
+      <label for="food">Hostel</label><br>
+      <input type="radio" name="category" value="misc">
+      <label for="food">Misc</label><br><br>
+      <label for="date">Enter Date</label><br>
+      <input type="date" name="date"><br><br>
+      <label for="notes">Write Any Note if you like</label><br>
+      <input type="text" placeholder="note..."><br><br>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
