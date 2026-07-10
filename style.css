@@ -1,0 +1,22 @@
+*{
+  /* box-sizing:border-box; */
+
+  align-items: center;
+}
+form{
+    border: 1px solid;
+    text-align: center;
+    margin: 10px 500px 10px;
+}
+.table{
+  border: 1px solid;
+  font-family: 'Times New Roman', Times, serif;
+  border: 1px solid black;
+  margin-left: 500px;
+}
+
+#s_no, #amount, #category, #date, #note{
+  border: 1px solid pink;
+  /* border-spacing: 95px; */
+  padding: 8px 12px;
+}

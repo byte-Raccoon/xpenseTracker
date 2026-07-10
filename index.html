@@ -1,24 +1,38 @@
-<html>
-  <header>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="style.css">
+  </head>
   <body>
+    <!-- Add expense — form: amount, category (dropdown: food/travel/hostel/misc), date, note -->
     <form>
       <label for="amount">Enter Amount in INR</label><br>
-      <input type="text" name="amount"><br><br>
+      <input type="number" name="amount"><br><br>
       <label for="category"> Enter the Category of Expense</label><br>
       <input type="radio" name="category" value="food">
       <label for="food">Food</label><br>
       <input type="radio" name="category" value="travel">
-      <label for="food">Travel</label><br>
+      <label for="travel">Travel</label><br>
       <input type="radio" name="category" value="hostel">
-      <label for="food">Hostel</label><br>
+      <label for="hostel">Hostel</label><br>
       <input type="radio" name="category" value="misc">
-      <label for="food">Misc</label><br><br>
+      <label for="misc">Misc</label><br><br>
       <label for="date">Enter Date</label><br>
       <input type="date" name="date"><br><br>
       <label for="notes">Write Any Note if you like</label><br>
       <input type="text" placeholder="note..."><br><br>
-      <input type="submit" value="submit">
+      <input type="submit" value="submit"><br>
     </form>
+    <!-- Display List -->
+     <table class="table">
+      <tr>
+      <th id="s_no">S.No.</th>
+      <th id="amount">Amount</th>
+      <th id="category">Category</th>
+      <th id="date">Date</th>
+      <th id="note">Note</th>
+      </tr>
+     </table>
   </body>
 </html>
