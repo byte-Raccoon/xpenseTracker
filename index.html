@@ -8,31 +8,45 @@
     <!-- Add expense — form: amount, category (dropdown: food/travel/hostel/misc), date, note -->
     <form>
       <label for="amount">Enter Amount in INR</label><br>
-      <input type="number" name="amount"><br><br>
-      <label for="category"> Enter the Category of Expense</label><br>
-      <input type="radio" name="category" value="food">
-      <label for="food">Food</label><br>
-      <input type="radio" name="category" value="travel">
-      <label for="travel">Travel</label><br>
-      <input type="radio" name="category" value="hostel">
-      <label for="hostel">Hostel</label><br>
-      <input type="radio" name="category" value="misc">
-      <label for="misc">Misc</label><br><br>
+      <input type="number" name="amount" id="amount"><br><br>
+
+      <label for="category"> Enter the Category of Expense</label><br><br>
+      <div class="radioChoice" id="Choice">
+        <div class="radio-item">
+          <input type="radio" name="category" value="food" id="food">
+          <label for="food">Food</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="category" value="travel" id="travel">
+          <label for="travel">Travel</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="category" value="hostel" id="hostel">
+          <label for="hostel">Hostel</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="category" value="misc" id="misc">
+          <label for="misc">Misc</label>
+        </div>
+      </div><br>
       <label for="date">Enter Date</label><br>
-      <input type="date" name="date"><br><br>
-      <label for="notes">Write Any Note if you like</label><br>
-      <input type="text" placeholder="note..."><br><br>
-      <input type="submit" value="submit"><br>
+      <input type="date" name="date" id="date"><br><br>
+
+      <label for="note">Write Any Note if you like</label><br>
+      <input type="text" placeholder="note..." id="note"><br><br>
+
+      <button type="submit" id="submit">submit</button>
     </form>
     <!-- Display List -->
      <table class="table">
-      <tr>
-      <th id="s_no">S.No.</th>
-      <th id="amount">Amount</th>
-      <th id="category">Category</th>
-      <th id="date">Date</th>
-      <th id="note">Note</th>
+      <tr id="tableRow">
+      <th class="s_no">S.No.</th>
+      <th class="amount">Amount</th>
+      <th class="category">Category</th>
+      <th class="date">Date</th>
+      <th class="note">Note</th>
       </tr>
      </table>
+     <script src="script.js"></script>
   </body>
 </html>

@@ -7,6 +7,7 @@ form{
     border: 1px solid;
     text-align: center;
     margin: 10px 500px 10px;
+    padding-bottom: 10px;
 }
 .table{
   border: 1px solid;
@@ -15,7 +16,20 @@ form{
   margin-left: 500px;
 }
 
-#s_no, #amount, #category, #date, #note{
+.radioChoice {
+  margin-left: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.s_no, .amount, .category, .date, .note{
   border: 1px solid pink;
   /* border-spacing: 95px; */
   padding: 8px 12px;
