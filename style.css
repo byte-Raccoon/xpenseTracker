@@ -29,8 +29,7 @@ form{
   align-items: center;
   gap: 6px;
 }
-.s_no, .amount, .category, .date, .note{
+.table th, .table td{
   border: 1px solid pink;
-  /* border-spacing: 95px; */
-  padding: 8px 12px;
+  padding: 8px 21px;
 }

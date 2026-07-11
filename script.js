@@ -5,6 +5,7 @@ submitBtn.addEventListener("click", event =>{
   getData();
   submitBtn.innerText = "Submitted!";
   addData();
+  addRow();
 })
 
 function getData(){
@@ -22,3 +23,11 @@ function addData(){
      para.style.color = "tomato";
      document.body.append(para); // ← missing line, actually adds it to the page
    }
+
+function addRow(){
+  const row = document.createElement("tr");
+  row.id = "1";
+  row.style.backgroundColor = "tomato";
+  const selectTable = document.querySelector(".table");
+  selectTable.append(row);
+}
