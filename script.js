@@ -28,6 +28,7 @@ submitBtn.addEventListener("click", event =>{
   event.preventDefault() 
   submitBtn.innerText = "Submitted!";
   addRow();
+  resetForm();
 })
 
 let miscCategory = "misc";
@@ -55,5 +56,13 @@ const miscBtn = () => {
     miscCategory = getCategory;
   }
   })
+}
+function resetForm(){
+  document.getElementById("amount").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("note").value = "";
+  const checkedRadio = document.querySelector('input[name="category"]:checked');
+  if (checkedRadio) checkedRadio.checked = false;
+  miscCategory = "misc"; // reset the misc override too, otherwise old custom label sticks around
 }
 miscBtn();
