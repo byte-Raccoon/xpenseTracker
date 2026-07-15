@@ -30,12 +30,30 @@ submitBtn.addEventListener("click", event =>{
   addRow();
 })
 
+let miscCategory = "misc";
+
 // collect data of form
 function getData(){
   const getAmount = document.getElementById("amount").value;
-  const getChoice = document.querySelector('input[name="category"]:checked')?.value;
+  let getChoice = document.querySelector(`input[name="category"]:checked`)?.value;
+  if (getChoice === "misc") {
+    getChoice = miscCategory;
+  }
   const getDate = document.getElementById("date").value;
   const getNote = document.getElementById("note").value;
   return {amount: getAmount, category: getChoice, date: getDate, note: getNote};
 }
 
+const miscBtn = () => {
+  const miscBtnSelect = document.querySelector("#miscBtn");
+  console.log("run")
+  miscBtnSelect.style.cssText = "border:1px solid black;"
+  miscBtnSelect.addEventListener("click", event => {
+    event.preventDefault();
+    let getCategory = prompt("expense name", "misc");
+    if (getCategory) {
+    miscCategory = getCategory;
+  }
+  })
+}
+miscBtn();
