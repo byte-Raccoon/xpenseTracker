@@ -1,13 +1,36 @@
 const submitBtn = document.getElementById("submit");
 
+let serialCount = 0;
+
+function addRow(){
+  const data = getData();
+  const table = document.querySelector("table");
+  const row = document.createElement("tr");
+  serialCount++;
+  row.innerHTML += `<td>${serialCount}</td>`;
+  for(let key in data){
+    row.innerHTML += `<td>${data[key]}</td>`;
+  }
+  if(data.category === "food"){
+    row.style.cssText = "background-color:tomato;";}
+  else if (data.category === "travel"){
+    row.style.backgroundColor = "#0e86cc";
+  }else if (data.category === "hostel"){
+    row.style.backgroundColor = "#09885a";
+  }else{
+    row.style.backgroundColor = "yellow";
+  }
+  table.appendChild(row);
+  console.log("run");
+}
+
 submitBtn.addEventListener("click", event =>{
   event.preventDefault() 
-  getData();
   submitBtn.innerText = "Submitted!";
-  addData();
   addRow();
 })
 
+// collect data of form
 function getData(){
   const getAmount = document.getElementById("amount").value;
   const getChoice = document.querySelector('input[name="category"]:checked')?.value;
@@ -16,18 +39,3 @@ function getData(){
   return {amount: getAmount, category: getChoice, date: getDate, note: getNote};
 }
 
-function addData(){
-     const data = getData();
-     const para = document.createElement("p");
-     para.textContent = `${data.amount} - ${data.category} - ${data.date} - ${data.note}`;
-     para.style.color = "tomato";
-     document.body.append(para); // ← missing line, actually adds it to the page
-   }
-
-function addRow(){
-  const row = document.createElement("tr");
-  row.id = "1";
-  row.style.backgroundColor = "tomato";
-  const selectTable = document.querySelector(".table");
-  selectTable.append(row);
-}
